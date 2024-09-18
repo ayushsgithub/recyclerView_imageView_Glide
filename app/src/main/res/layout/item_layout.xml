@@ -9,10 +9,10 @@
         android:id="@+id/tvPeron"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivAvatar"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Person 1" />
 
@@ -26,4 +26,15 @@
         app:layout_constraintStart_toStartOf="@+id/tvPeron"
         app:layout_constraintTop_toBottomOf="@+id/tvPeron"
         tools:text="Age: 2" />
+
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="175dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
