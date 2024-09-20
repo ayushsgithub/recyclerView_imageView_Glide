@@ -7,6 +7,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         val rvList = findViewById<RecyclerView>(R.id.rvList)
 
-        rvList.layoutManager = LinearLayoutManager(this)
+//        rvList.layoutManager = LinearLayoutManager(this)
+        rvList.itemAnimator = SlideInUpAnimator()
+        rvList.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         rvList.adapter = MyAdapter(this, contacts)
 
 
@@ -34,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         val contacts : MutableList<Person> = mutableListOf<Person>()
 
         for (i: Int in 1..100){
-            contacts.add(Person("Person $i", i))
+            contacts.add(Person("Image $i", i))
         }
 
         return contacts
