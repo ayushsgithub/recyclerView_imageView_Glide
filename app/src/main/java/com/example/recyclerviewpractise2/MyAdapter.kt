@@ -1,6 +1,7 @@
 package com.example.recyclerviewpractise2
 
 import android.content.Context
+import android.content.res.Configuration
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +32,11 @@ class MyAdapter(private val context: Context, private val contacts: MutableList<
         fun bind(contact: Person) {
             tvPerson.text = contact.name
             tvAge.text = "Age: ${contact.age}"
-            Glide.with(context).load(contact.imageUrl).into(ivAvatar)
+            var imgUrl = contact.imageUrl
+            if(context.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+                imgUrl = contact.landscapeImageUrl
+            }
+            Glide.with(context).load(imgUrl).into(ivAvatar)
         }
 
     }
