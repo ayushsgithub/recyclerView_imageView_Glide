@@ -1,6 +1,6 @@
 # RecyclerView with ImageView and Glide
 
-This Android project demonstrates the use of `RecyclerView` to display a list of images efficiently, utilizing the `Glide` library for image loading and caching.
+This Android project demonstrates the use of `RecyclerView` to display a list of images efficiently, utilizing the `Glide` library for image loading.
 
 ## Features
 
